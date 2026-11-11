@@ -1,0 +1,27 @@
+{
+  "name": "ovbeck-financas",
+  "version": "1.2.0",
+  "private": true,
+  "description": "OVBECK — plataforma de controle financeiro pessoal",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "admin:create": "node scripts/create-admin.js",
+    "admin:setup": "node scripts/configure-local-admin.js",
+    "stress-admin": "node tests/admin-stress.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --check src/db.js && node --check src/admin-bootstrap.js && node --check src/mercadopago.js && node --check src/finance.js && node --check src/plans.js && node --check src/exports.js && node --check public/auth-validation.js && node --check public/app.js && node --check public/finance.js && node --check tests/auth-validation.test.js && node --check tests/finance.test.js && node --check tests/db.test.js && node --check tests/server.test.js && node --check tests/ui-contract.test.js && node --check tests/exports.test.js && node --check tests/production-guard.test.js && node --check tests/stress-critical.js && node --check scripts/create-admin.js && node --check scripts/configure-local-admin.js && node --check scripts/reset-admin-password.js && node --check scripts/backup-db.js && node --check scripts/restore-db.js && node --check tests/admin-bootstrap.test.js && node --check tests/admin.test.js && node --check tests/admin-reset-cli.test.js && node --check tests/admin-migration.test.js && node --check tests/admin-stress.js && node --check public/admin.js && node --check tests/registration-ip.test.js && node --check tests/registration-cooldown.test.js && node --check tests/mercadopago.test.js && node --check tests/backup.test.js && node --check tests/local-premium.test.js",
+    "verify": "npm run check && npm test",
+    "stress": "node tests/stress-critical.js",
+    "admin:reset": "node scripts/reset-admin-password.js",
+    "stress:admin": "node tests/admin-stress.js",
+    "db:backup": "node scripts/backup-db.js",
+    "db:restore": "node scripts/restore-db.js"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "dependencies": {
+    "sharp": "^0.34.1"
+  }
+}
